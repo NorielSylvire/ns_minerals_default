@@ -26,6 +26,7 @@ Below is the documentation on how to use the functions in this mod.
 ---
 ## Changelog
 
+* 1.2.1 - Changed the way the register_default callback is registered for better debugging. Also callbacks before this change weren't registering properly. Now they work.
 * 1.2 - Made the mod into a modpack. Since the code in this mod existed when the modpack was a mod, this mod carries the changelog of when it was a mod and not a modpack. Similarly, despite this version being the first where this is a mod inside a modpack, the version number is 1.2 so that it's clear this is more recent than 1.1. Also `vanilla_oregen` was changed to `oregen`.
 * 1.1 - Improved API documentation and corrected spelling mistakes. Added compatibility with farming mod. Added working hoes and scythes. Added the ability to choose the `texture_brightness` while using custom textures for the tools that do not have custom textures. Changed `is_metal` from `crafting.lua` to `mineral.mineral_type == "metal"`. It was a legacy variable name from back in 2020, when this API was part of nsam mod. The incorrect name caused metal type minerals to not register recipes.
 * 1.0 - Initial release: Automatic registration of tools, nodes, ores, craftitems and crafting recipes. Automatic generation of colorized textures for ALL the items from premade grayscale textures shipped with the API.

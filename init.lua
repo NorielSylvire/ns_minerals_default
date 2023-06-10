@@ -28,6 +28,7 @@ such as GitHub: https://github.com/
 or Twitter: https://twitter.com/Noriel_Sylvire
 --]]
 
+-- @diagnostic disable: undefined-global
 nsmc.default_version = 1.2
 
 local default_path = minetest.get_modpath("ns_minerals_default")
@@ -41,7 +42,6 @@ dofile(default_path.."/oregen.lua")
 function nsmc.register_default(modname, mineral)
 
 	mineral.mineral_type = mineral.mineral_type or "metal"
-	
 	mineral.flammable = mineral.flammable or false
 	mineral.burntime = mineral.burntime or nslib.tern(mineral.flammable, 1, 0)
 	mineral.block_burntime = mineral.block_burntime or (mineral.burntime * 9 + 5)
@@ -126,4 +126,4 @@ function nsmc.register_default(modname, mineral)
 	nsmc.register_nodes(modname, mineral)
 end
 
-nsmc.register_callback(nsmc.register_default)
+nsmc.register_callback(nsmc.register_default, "register_default")
