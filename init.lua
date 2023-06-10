@@ -126,4 +126,8 @@ function nsmc.register_default(modname, mineral)
 	nsmc.register_nodes(modname, mineral)
 end
 
-nsmc.register_callback(nsmc.register_default, "register_default")
+nsmc.register_callback({
+  name = "register_default",
+  func = nsmc.register_default,
+  supported_mod = "default"
+})
